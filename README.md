@@ -21,7 +21,7 @@ La app tiene 3 secciones principales
 
 ## Desafios
 1. Implementar la vista de detalle de un libro. Para ello debemos buscar en la base de datos el libro cuyo Id sea igual al que se envia por parametro en la ruta de nuestro endpoint y actualizar la vista `bookDetail.ejs` para recibir y mostrar estos datos.
-2. Busqueda de libros: Desarrollar la funcionalidad de busqueda, para esto utilizaremos el formulario de busqueda que se encuentra en la vista de `search.ejs`. Debemos escuchar las peticiones POST sobre la ruta `/books/search` y con el campo `title` del body buscar en la base de datos los libros que tengan un titulo similar.
+2. Busqueda de libros: Desarrollar la funcionalidad de busqueda, para esto utilizaremos el formulario de busqueda que se encuentra en la vista de `search.ejs`. Debemos escuchar las peticiones POST sobre la ruta `/books/search` y con el campo `title` del body buscar en la base de datos los libros que tengan un titulo similar.Plus: Evitar desde el front que se envíe el formulario, si no se ha escrito nada en el input.
 3. Libros de un autor: implementar la vista de `authorBooks.ejs` a la cual llegamos haciendo click en un autor, esta vista debera listar todos los libros de un determinado autor en particular, leyendo su Id por parametro.
 4. Edicion de libros: Implementar el formulario de edicion de libros, tener en cuenta que solo un usuario administrador debera tener acceso a esta funcionalidad (ocultar el boton para usuarios comunes).
 5. Eliminacion de libros: Implementar el boton de eliminación en el detalle de libros, tener en cuenta que solo los usuarios administradores pueden realizar esta accion.
@@ -31,3 +31,4 @@ La app tiene 3 secciones principales
    - Al estar logueado debemos ver un botón de logout en lugar del botón de login que cerrará nuestra sesion.
    - Utilizar cookies para recordar el usuario logueado.
    - Distinguir entre usuarios estandar y administradores cuando corresponda según lo mencionado en puntos anteriores.
+   - Implementar la lógica para desloguearse
