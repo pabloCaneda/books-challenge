@@ -1,5 +1,6 @@
 const express = require('express');
 const mainController = require('../controllers/main');
+const loginProcess = require('../controllers/loginProcess');
 
 const router = express.Router();
 
@@ -12,9 +13,10 @@ router.get('/authors/:id/books', mainController.authorBooks);
 router.get('/users/register', mainController.register);
 router.post('/users/register', mainController.processRegister);
 router.get('/users/login', mainController.login);
-router.post('/users/login', mainController.processLogin);
+router.post('/users/login', loginProcess);
 router.delete('/books/:id', mainController.deleteBook);
 router.get('/books/edit/:id', mainController.edit);
 router.put('/books/edit/:id', mainController.processEdit);
+router.post('/logout', mainController.clearcookie)
 
 module.exports = router;

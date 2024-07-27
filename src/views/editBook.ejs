@@ -16,10 +16,12 @@
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-9">
-  
-          <h1 class="text-white mb-4">Edit book <%= id %> </h1>
-  
-          <form action="/books/edit/<%= id %> " method="POST" class="card" style="border-radius: 15px;">
+          <% if (locals.userLogin && locals.userLogin.categoryId === 1) { %>
+           
+          <h1 class="text-white mb-4">Edit book <%= book.id %> </h1>
+         
+          <form action="/books/edit/1?_method=PUT" method="POST" class="card" style="border-radius: 15px;">
+
             <div class="card-body">
   
               <div class="row align-items-center pt-4 pb-3">
@@ -30,7 +32,7 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="title" class="form-control form-control-lg" />
+                  <input type="text" name="title" class="form-control form-control-lg" value="<%= locals.old?.title || locals.old?.title === "" ? locals.old?.title : book.title %>">
   
                 </div>
               </div>
@@ -45,7 +47,7 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="cover" class="form-control form-control-lg" />
+                  <input type="text" name="cover" class="form-control form-control-lg" value="<%= locals.old?.cover || locals.old?.cover === "" ? locals.old?.cover : book.cover %>">
   
                 </div>
               </div>
@@ -60,7 +62,7 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="description" class="form-control form-control-lg" />
+                  <input type="text" name="description" class="form-control form-control-lg" value="<%= locals.old?.description || locals.old?.description === "" ? locals.old?.title : book.description %>">
   
                 </div>
               </div>
@@ -73,12 +75,14 @@
   
             </div>
           </form>
-  
+         
         </div>
       </div>
     </div>
   </section>
 </div>
+
 <%- include('partials/footer.ejs') %>
 </body>
+<% } %>
 </html>

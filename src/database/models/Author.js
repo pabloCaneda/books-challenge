@@ -11,7 +11,13 @@ module.exports = (sequelize, dataTypes) => {
     },
     country: {
       type: dataTypes.STRING
-    }
+    },
+    imgAuthor: {
+      type: dataTypes.STRING
+    },
+    imgCountry: {
+      type: dataTypes.STRING
+    },
   };
   let config = {
     tableName: 'Authors',

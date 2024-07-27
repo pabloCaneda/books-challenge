@@ -16,6 +16,9 @@ module.exports = (sequelize, dataTypes) => {
     },
     description: {
       type: dataTypes.STRING
+    },
+    fecha_publicacion: {
+      type: dataTypes.STRING
     }
   };
   let config = {
